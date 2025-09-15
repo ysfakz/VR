@@ -6,14 +6,16 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 public class Sand : MonoBehaviour
 {
     public GameObject chest;
-
-    private XRSimpleInteractable interactable;
     public Canvas shovelCanvas;
+    private XRSimpleInteractable interactable;
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip audioClip;
     private void Awake()
     {
         interactable = GetComponent<XRSimpleInteractable>();
         interactable.selectEntered.AddListener(OnSelect);
         shovelCanvas.gameObject.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnSelect(SelectEnterEventArgs args)
@@ -29,11 +31,11 @@ public class Sand : MonoBehaviour
             chest.transform.rotation = spawnRot;
             chest.SetActive(true);
 
-            Destroy(gameObject); // Remove sand pile
-
+            Destroy(gameObject);
         }
         else
         {
+            audioSource.PlayOneShot(audioClip);
             StartCoroutine(ShowShovelCanvas());
         }
     }
