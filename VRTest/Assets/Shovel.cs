@@ -16,6 +16,7 @@ public class Shovel : MonoBehaviour
     private void OnSelect(SelectEnterEventArgs args)
     {
         GameManager.Instance.hasShovel = true;   // Track shovel
+        GameManager.Instance.shovelImage.SetActive(true);
         gameObject.SetActive(false);             // Hide shovel
         Debug.Log("Shovel Grabbed");
     }
