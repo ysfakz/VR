@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 227711649}
   - component: {fileID: 227711652}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: SandUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2131,7 +2131,7 @@ GameObject:
   - component: {fileID: 1673748013}
   - component: {fileID: 1673748012}
   m_Layer: 5
-  m_Name: UI
+  m_Name: ShovelUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2347,7 +2347,7 @@ GameObject:
   - component: {fileID: 1804069335}
   - component: {fileID: 1804069334}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: ChestUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
