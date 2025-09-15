@@ -20,6 +20,12 @@ public class Chest : MonoBehaviour
     {
         if (storyUI != null)
         {
+
+            Vector3 chestBack = transform.position - transform.forward * 0; // 0.5m behind chest
+            Vector3 uiPos = new Vector3(chestBack.x, transform.position.y + 1.5f, chestBack.z); // lifted a bit
+            storyUI.transform.position = uiPos;
+            storyUI.transform.rotation = transform.rotation * Quaternion.Euler(0, 90, 0);
+
             storyUI.SetActive(true);
             audioSource.PlayOneShot(audioClip);
             Debug.Log("Chest opened, UI shown");
