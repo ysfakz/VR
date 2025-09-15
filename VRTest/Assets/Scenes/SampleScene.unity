@@ -2665,7 +2665,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chest: {fileID: 1457286263}
   shovelCanvas: {fileID: 227711651}
-  audioClip: {fileID: 8300000, guid: 7b1773fcc0b05de4dbbe60d7b993f22d, type: 3}
+  audioClipError: {fileID: 8300000, guid: 7b1773fcc0b05de4dbbe60d7b993f22d, type: 3}
+  audioClipSand: {fileID: 8300000, guid: 5451f8d2a2b7888488a5f033940231a3, type: 3}
 --- !u!114 &1858355529
 MonoBehaviour:
   m_ObjectHideFlags: 0

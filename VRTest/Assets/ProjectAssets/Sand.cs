@@ -9,7 +9,8 @@ public class Sand : MonoBehaviour
     public Canvas shovelCanvas;
     private XRSimpleInteractable interactable;
     private AudioSource audioSource;
-    [SerializeField] private AudioClip audioClip;
+    [SerializeField] private AudioClip audioClipError;
+    [SerializeField] private AudioClip audioClipSand;
     private void Awake()
     {
         interactable = GetComponent<XRSimpleInteractable>();
@@ -26,6 +27,7 @@ public class Sand : MonoBehaviour
             Quaternion spawnRot = transform.rotation;
             Debug.Log("Shovel Used");
             GameManager.Instance.shovelImage.SetActive(false);
+            AudioSource.PlayClipAtPoint(audioClipSand, spawnPos, 1);
 
             chest.transform.position = spawnPos;
             chest.transform.rotation = spawnRot;
@@ -35,7 +37,7 @@ public class Sand : MonoBehaviour
         }
         else
         {
-            audioSource.PlayOneShot(audioClip);
+            audioSource.PlayOneShot(audioClipError);
             StartCoroutine(ShowShovelCanvas());
         }
     }
